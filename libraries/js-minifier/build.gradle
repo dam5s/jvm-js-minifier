@@ -1,0 +1,3 @@
+dependencies {
+    compile("com.google.javascript:closure-compiler:$closureCompilerVersion")
+}

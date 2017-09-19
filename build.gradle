@@ -1,0 +1,35 @@
+buildscript {
+    ext {
+        aspenVersion = "2.1.0"
+        kotlinVersion = "1.1.4-3"
+        closureCompilerVersion = "v20170910"
+    }
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+subprojects {
+    apply plugin: "kotlin"
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+        compile("org.jetbrains.kotlinx:kotlinx-support-jdk8:0.3")
+    }
+
+    sourceSets {
+        main.kotlin.srcDir "src"
+        main.resources.srcDir "resources"
+        test.kotlin.srcDir "tests"
+        test.resources.srcDir "tests-resources"
+    }
+}
